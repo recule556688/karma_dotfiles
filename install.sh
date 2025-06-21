@@ -15,6 +15,7 @@ install_yay_and_ml4w() {
     sudo pacman -Sy --noconfirm git base-devel
 
     if ! command -v yay &> /dev/null; then
+        echo "📥 yay introuvable, installation..."
         git clone https://aur.archlinux.org/yay.git
         cd yay
         makepkg -si --noconfirm
@@ -46,21 +47,24 @@ install_karma_dotfiles() {
     fi
 
     echo "📂 Copie des nouveaux dotfiles..."
-    cp -r "$KARMA_CLONE_DIR" "$DOTFILES_TARGET"
+    mv "$KARMA_CLONE_DIR" "$DOTFILES_TARGET"
 
     echo "✅ Tes dotfiles sont installés dans ~/dotfiles"
-    echo "ℹ️ Pense à rebooter ou relancer Hyprland pour voir les changements"
+    echo "ℹ️ Tu peux maintenant relancer Hyprland ou rebooter."
 }
 
 # ===== MENU =====
 
+clear
 echo "╭────────────────────────────────────────────╮"
-echo "│           🧠 Script d'install Karma         │"
+echo "│        🧠 Script de setup Arch + Hyprland   │"
 echo "╰────────────────────────────────────────────╯"
-echo "1. Installer yay + ML4W dotfiles (Hyprland)"
-echo "2. Installer mes dotfiles perso (karma_dotfiles)"
-echo "3. Quitter"
 echo
+echo "1. 📦 Installer yay + ML4W (Hyprland de base)"
+echo "2. 🛠️  Installer mes dotfiles (karma_dotfiles)"
+echo "3. ❌ Quitter"
+echo
+
 read -rp "Sélectionne une option [1-3] : " choice
 
 case "$choice" in
