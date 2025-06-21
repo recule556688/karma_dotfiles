@@ -5,7 +5,7 @@
 # -----------------------------------------------------
 # General
 # -----------------------------------------------------
-alias c='clear'
+alias c='clear && fastfetch --config examples/17'
 alias nf='fastfetch'
 alias pf='fastfetch'
 alias ff='fastfetch'
@@ -32,7 +32,6 @@ alias ml4w-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
 alias ml4w-hyprland-diagnosis='~/.config/hypr/scripts/diagnosis.sh'
 alias ml4w-qtile-diagnosis='~/.config/ml4w/qtile/scripts/diagnosis.sh'
 alias ml4w-update='~/.config/ml4w/update.sh'
-alias c='clear && fastfetch --config examples/17'
 
 # -----------------------------------------------------
 # Window Managers
